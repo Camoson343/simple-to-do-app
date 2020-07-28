@@ -21,9 +21,19 @@ function onReady() {
         toDoList.appendChild(newLi);
 
         newToDoText.value = '';
+
+        let deleteButton = document.createElement('button')
+        deleteButton.textContent = 'delete';
+
+        newLi.appendChild(deleteButton);
+
+        deleteButton.addEventListener('click', () => {
+            newLi.parentNode.removeChild(newLi)
+        });
     });
 }
 
 window.onload = function() {
     onReady();
 };
+
